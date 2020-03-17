@@ -11,7 +11,7 @@ namespace AnimalShelter.Controllers
   {
     private readonly AnimalShelterContext _db;
     
-    public AnimalsController(ToDoListContext db)
+    public AnimalsController(AnimalShelterContext db)
     {
         _db = db;
     }
@@ -19,7 +19,7 @@ namespace AnimalShelter.Controllers
     public ActionResult Index()
     {
       List<Animal> model = _db.Animals.ToList();
-      return View();
+      return View(model);
     }
 
     public ActionResult Create()
